@@ -1,6 +1,6 @@
 import { Button } from "react-bootstrap";
 import { useState } from "react";
-import NewPostModal from "./NewPostModal";
+import NewTodo from "./NewTodo";
 import { Navbar, Container } from "react-bootstrap";
 
 export default function DashBoardNavbar({ handleLogout }) {
@@ -8,7 +8,6 @@ export default function DashBoardNavbar({ handleLogout }) {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
 
     return (
         <>
@@ -23,10 +22,12 @@ export default function DashBoardNavbar({ handleLogout }) {
                         text="Logout"
                         onClick={handleLogout}
                     />
-                    <NewPostModal show={show} handleClose={handleClose} />
+                    <NewTodo show={show} handleClose={handleClose} />
                 </Container>
             </Navbar>
         </>
+
     )
+
 }
 
