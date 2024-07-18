@@ -5,12 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 import DashBoardNavbar from "../components/DashBoardNavbar";
 import TodoCard from "../components/TodoCard";
+import DashBoardMid
 
 export default function DashBoard() {
     const auth = getAuth();
     const navigate = useNavigate();
-    const { currentUser } = useContext(AuthContext);
-
+    const { currentUser } = useContext(AuthContext)
 
     if (!currentUser) {
         navigate("/login");
@@ -25,6 +25,7 @@ export default function DashBoard() {
             <Container>
                 <Row>
                     <DashBoardNavbar handleLogout={handleLogout} />
+                    <DashBoardMid />
                     <TodoCard />
                 </Row>
             </Container>

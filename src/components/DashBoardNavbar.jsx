@@ -2,6 +2,7 @@ import { Button } from "react-bootstrap";
 import { useState } from "react";
 import NewTodo from "./NewTodo";
 import { Navbar, Container } from "react-bootstrap";
+import IconButton from "./IconButton";
 
 export default function DashBoardNavbar({ handleLogout }) {
     const [show, setShow] = useState(false);
@@ -13,9 +14,16 @@ export default function DashBoardNavbar({ handleLogout }) {
         <>
             <Navbar bg="primary" variant="dark">
                 <Container>
-                    <Navbar.Brand href="/dashboard" className="bi bi-journal-text" text="DashBoard"></Navbar.Brand>
-                    <Button className="rounded-pill w-100 mb-3" onClick={handleShow}>
+                    <Navbar.Brand href="/dashboard">
+                        <IconButton className="bi bi-journal-text" text="DashBoard">
+                        </IconButton>
+                        DashBoard
+                    </Navbar.Brand>
+                    <Button className="bi bi-lus-circle" onClick={handleShow}>
                         Add Todo
+                    </Button>
+                    <Button className="bi bi-person">
+                        Profile
                     </Button>
                     <Button
                         className="bi bi-door-closed"
