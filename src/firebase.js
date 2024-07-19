@@ -8,12 +8,12 @@ import { getStorage } from "firebase/storage"; //old
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyAC95lK841umejYkYUfvGMTmJpXI6-RqBw",
-    authDomain: "todo-app-b073e.firebaseapp.com",
-    projectId: "todo-app-b073e",
-    storageBucket: "todo-app-b073e.appspot.com",
-    messagingSenderId: "47554545879",
-    appId: "1:47554545879:web:a775edfb478140d3a8c892"
+    apiKey: import.meta.env.VITE_API_KEY,
+    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_STORAGE_ID,
+    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_APP_ID
 };
 
 // Initialize Firebase
