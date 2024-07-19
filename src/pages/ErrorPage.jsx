@@ -5,7 +5,8 @@ export default function ErrorPage() {
             <div>
                 <h1 className="my-100"><strong>Error 404</strong></h1>
             </div>
-            <Button variant="primary" type="Back to DashBoard">
+            <p><strong>We cant seem to find the page you are looking for</strong></p>
+            <Button className="rounded-pill" variant="primary" style={{ fontSize: 30 }} href="/dashboard">
                 Back to DashBoard
             </Button>
         </Container>

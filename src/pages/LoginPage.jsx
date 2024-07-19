@@ -24,7 +24,7 @@ export default function LoginPage() {
     const auth = getAuth();
     const { currentUser } = useContext(AuthContext);
     useEffect(() => {
-        if (currentUser) navigate("/profile");
+        if (currentUser) navigate("/dashboard");
 
     }, [currentUser, navigate]);
 
@@ -76,7 +76,7 @@ export default function LoginPage() {
                                     fontWeight: "bold",
                                     position: "relative",
                                     display: "inline-block",
-                                }}>Todo App</h2>
+                                }}>TODO APP</h2>
                             <Button
                                 className="rounded-pill"
                                 //variant="outline-dark"
