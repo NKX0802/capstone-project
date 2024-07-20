@@ -1,7 +1,7 @@
 import { Button } from "react-bootstrap";
 import { useState } from "react";
 //import AddTodo from "./AddTodo";
-import { Navbar, Container } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 
 export default function DashBoardNavbar({ handleLogout }) {
     //const [show, setShow] = useState(false);
@@ -12,28 +12,32 @@ export default function DashBoardNavbar({ handleLogout }) {
     return (
         <>
             <Navbar bg="primary" variant="dark">
-                <Container className="d-flex flex-row justify-content-start align-items-start vh-1000">
-                    <Button className="bi bi-journal-text" style={{ fontSize: 25 }} href="/dashboard">
+                <div className="d-flex flex-row justify-content-start align-items-start vh-1000">
+                    <Button style={{ fontSize: 25, fontFamily: 'Lilita One, cursive' }} href="/dashboard">
                         DashBoard
                     </Button>
-                    {/* <Button className="bi bi-plus-circle" style={{ fontSize: 25 }} onClick={handleShow}>
+                    <Button style={{ fontSize: 25, fontFamily: 'Lilita One, cursive' }} >
                         Add Todo
-                    </Button> */}
-                    <Button className="bi bi-person" style={{ fontSize: 25 }}>
+                    </Button>
+                    <Button style={{ fontSize: 25, fontFamily: 'Lilita One, cursive' }}>
                         Profile
                     </Button>
-                    <Button className="bi bi-cloud" style={{ fontSize: 25 }}>
+                    <Button style={{ fontSize: 25, fontFamily: 'Lilita One, cursive' }}>
                         Weather
                     </Button>
-                    <Button className="bi bi-door-closed" style={{ fontSize: 25 }} onClick={handleLogout} >
+                    <Button style={{ fontSize: 25, fontFamily: 'Lilita One, cursive', marginRight: '8px' }} onClick={handleLogout} >
                         Logout
                     </Button>
                     {/* <AddTodo show={show} handleClose={handleClose} /> */}
-                </Container>
+                </div>
             </Navbar>
         </>
 
     )
 
 }
-
+// className="bi bi-journal-text"
+// className="bi bi-clipboard-plus"
+// className="bi bi-person"
+// className="bi bi-cloud"
+// className="bi bi-door-closed"

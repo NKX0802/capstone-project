@@ -6,7 +6,7 @@ import {
     signInWithPopup,
 } from "firebase/auth";
 import { useContext, useEffect, useState } from "react";
-import { Col, Button, Modal, Form, Container, Row, } from "react-bootstrap"; //Image
+import { Col, Button, Modal, Form, Row } from "react-bootstrap"; //Image
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 import Box from "../Box";
@@ -72,11 +72,11 @@ export default function LoginPage() {
                                 style={{
                                     fontSize: 100,
                                     textAlign: "center",
-                                    color: "#00CCFF",
+                                    color: "black",
                                     fontWeight: "bold",
                                     position: "relative",
                                     display: "inline-block",
-                                }}>TODO APP</h2>
+                                }}>TODO LIST APP</h2>
                             <Button
                                 className="rounded-pill"
                                 //variant="outline-dark"

@@ -1,10 +1,10 @@
 import { getAuth } from "firebase/auth";
 import { useContext } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 import DashBoardNavbar from "../components/DashBoardNavbar";
-//import TodoCard from "../components/TodoCard";
+import TodoCard from "../components/TodoCard";
 import DashBoardMid from "../components/DashBoardMid";
 
 export default function DashBoard() {
@@ -22,11 +22,14 @@ export default function DashBoard() {
 
     return (
         <>
+
             <Container>
                 <Row>
                     <DashBoardNavbar handleLogout={handleLogout} />
                     <DashBoardMid />
-                    {/* <TodoCard /> */}
+                    <Col md={12}>
+                        <TodoCard />
+                    </Col>
                 </Row>
             </Container>
         </>
