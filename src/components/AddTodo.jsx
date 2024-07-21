@@ -6,12 +6,16 @@ import { saveTodo } from "../features/posts/postsSlice";
 
 export default function AddTodo({ show, handleClose }) {
     const [todoContent, setTodoContent] = useState("");
+    const [todoTitle, setTodoTitle] = useState("");
+    const [todoDeadline, setTodoDeadline] = useState("");
     const dispatch = useDispatch();
 
     const handleSave = () => {
-        dispatch(saveTodo(todoContent));
+        dispatch(saveTodo(todoContent, todoTitle, todoDeadline));
         handleClose();
         setTodoContent("");
+        setTodoTitle("");
+        setTodoDeadline("");
     };
     return (
         <>
@@ -25,7 +29,7 @@ export default function AddTodo({ show, handleClose }) {
                                 placeholder="Todo Title"
                                 as="textarea"
                                 rows={1}
-                                onChange={(e) => setTodoContent(e.target.value)}
+                                onChange={(e) => setTodoTitle(e.target.value)}
                             />
                         </Form.Group>
                         <h2 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue" }}>Content</h2>
@@ -35,6 +39,15 @@ export default function AddTodo({ show, handleClose }) {
                                 as="textarea"
                                 rows={3}
                                 onChange={(e) => setTodoContent(e.target.value)}
+                            />
+                        </Form.Group>
+                        <h3 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue" }}>Deadline</h3>
+                        <Form.Group controlId="postDealine">
+                            <Form.Control
+                                placeholder="Todo Deadline"
+                                as="textarea"
+                                rows={1}
+                                onChange={(e) => setTodoDeadline(e.target.value)}
                             />
                         </Form.Group>
                     </Form>

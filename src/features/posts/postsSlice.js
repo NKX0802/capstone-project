@@ -13,9 +13,9 @@ export const fetchPostsByUser = createAsyncThunk(
     }
 );
 
-export const savePost = createAsyncThunk(
+export const saveTodo = createAsyncThunk(
     "posts/savePost",
-    async (todoContent, todoTitle) => {
+    async (todoContent, todoTitle, todoDeadline) => {
         const token = localStorage.getItem("authToken");
         const decode = jwtDecode(token);
         const userId = decode.id;
@@ -23,6 +23,7 @@ export const savePost = createAsyncThunk(
         const data = {
             title: todoTitle,
             content: todoContent,
+            deadline: todoDeadline,
             user_id: userId,
         };
         const response = await axios.post(`${BASE_URL}/todo`, data);

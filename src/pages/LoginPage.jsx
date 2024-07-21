@@ -70,37 +70,37 @@ export default function LoginPage() {
                             <h2
                                 className="my-4"
                                 style={{
-                                    fontSize: 100,
+                                    fontSize: 121,
                                     textAlign: "center",
-                                    color: "black",
-                                    fontWeight: "bold",
+                                    color: "dodgerblue",
                                     position: "relative",
                                     display: "inline-block",
+                                    fontFamily: 'Lilita One, cursive'
                                 }}>TODO LIST APP</h2>
                             <Button
                                 className="rounded-pill"
                                 //variant="outline-dark"
                                 onClick={handleGoogleLogin}
-                                style={{ fontSize: "40px", fontWeight: "bold" }}
+                                style={{ fontSize: "50px", fontFamily: 'Lilita One, cursive' }}
                             >
                                 <i className="bi bi-google"></i> Sign up with Google
                             </Button>
-                            <p className="mt-2" style={{ fontSize: "27px", textAlign: "center", fontWeight: "bold" }}>Or</p>
+                            <p className="mt-2" style={{ fontSize: "35px", textAlign: "center", fontFamily: 'Lilita One, cursive' }}>Or</p>
                             <Button
                                 className="rounded-pill"
                                 onClick={handleShowSignUp}
-                                style={{ fontSize: "40px", fontWeight: "bold" }}
+                                style={{ fontSize: "50px", fontFamily: 'Lilita One, cursive', }}
                             >
                                 Sign Up
                             </Button>
-                            <p className="mt-3" style={{ fontSize: "25px", textAlign: "center", fontWeight: "bold" }}>
+                            <p className="mt-3" style={{ fontSize: "35px", textAlign: "center", fontFamily: 'Lilita One, cursive' }}>
                                 Already have an account?
                             </p>
                             <Button
                                 className="rounded-pill"
                                 //variant="outline-primary"
                                 onClick={handleShowLogin}
-                                style={{ fontSize: "40px", fontWeight: "bold" }}
+                                style={{ fontSize: "50px", fontFamily: 'Lilita One, cursive' }}
                             >
                                 Sign In
                             </Button>
