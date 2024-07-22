@@ -1,6 +1,3 @@
-// src/Box.js
-import React from 'react';
-
 const Box = ({ children }) => {
     const boxStyle = {
         border: '2px solid #ccc',

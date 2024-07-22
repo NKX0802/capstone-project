@@ -1,26 +1,34 @@
 import { useState } from "react";
 import { Button, Form, Modal } from "react-bootstrap";
-import { useDispatch } from "react-redux";
-import { saveTodo } from "../features/posts/postsSlice";
+import axios from "axios";
 
 
-export default function UpdateTodo({ show, handleClose }) {
-    const [todoContent, setTodoContent] = useState("");
-    const [todoTitle, setTodoTitle] = useState("");
-    const [todoDeadline, setTodoDeadline] = useState("");
-    const dispatch = useDispatch();
+export default function UpdateTodo({ showUpdate, handleClose, title, content, deadline, todoId }) {
+    const [todoContent, setTodoContent] = useState(content || "");
+    const [todoTitle, setTodoTitle] = useState(title || "");
+    const [todoDeadline, setTodoDeadline] = useState(deadline || "");
+    const BASE_URL = "https://12a8b481-2ba4-4259-ab39-99c9343fe889-00-2xxp2tgehd2zp.picard.replit.dev/";
 
-    const handleSave = () => {
-        dispatch(saveTodo(todoContent, todoTitle, todoDeadline));
-        handleClose();
-        setTodoContent("");
-        setTodoTitle("");
-        setTodoDeadline("");
+    const handleUpdate = async () => {
+        console.log(todoId)
+        try {
+            const response = await axios.put(`${BASE_URL}/todo/${todoId}`, {
+                title: todoTitle,
+                content: todoContent,
+                deadline: todoDeadline
+            });
+            console.log(response.data);
+            handleClose();
+            setTodoTitle("");
+            setTodoContent("");
+            setTodoDeadline("");
+        } catch (error) {
+            console.error("Error updating post:", error);
+        }
     };
-
     return (
         <>
-            <Modal show={show} onHide={handleClose}>
+            <Modal show={showUpdate} onHide={handleClose}>
                 <Modal.Header closeButton></Modal.Header>
                 <Modal.Body>
                     <Form>
@@ -55,11 +63,11 @@ export default function UpdateTodo({ show, handleClose }) {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button
-                        variant="primary"
+                        variant="warning"
                         className="rounded-pill"
-                        onClick={handleSave}
+                        onClick={handleUpdate}
                     >
-                        Add Todo
+                        Update Todo
                     </Button>
                 </Modal.Footer>
             </Modal>

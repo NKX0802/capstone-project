@@ -24,14 +24,15 @@ export default function DashBoardMid() {
         console.log(todo)
 
     })
+
     return (
         <Col>
             <p style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "black" }}>Your Todos</p>
-            {todo.map((post) => (
+            {todo.map((todo) => (
                 <TodoCard
-                    key={post.id}
-                    content={post.content}
-                    postId={post.id}
+                    key={todo.id}
+                    content={todo.content}
+                    todoId={todo.id}
                 />
             ))}
         </Col>

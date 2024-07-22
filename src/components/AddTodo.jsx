@@ -24,7 +24,7 @@ export default function AddTodo({ show, handleClose }) {
                 <Modal.Body>
                     <Form>
                         <h1 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue" }}>Title</h1>
-                        <Form.Group controlId="postTitle">
+                        <Form.Group controlId="todoTitle">
                             <Form.Control
                                 placeholder="Todo Title"
                                 as="textarea"
@@ -33,7 +33,7 @@ export default function AddTodo({ show, handleClose }) {
                             />
                         </Form.Group>
                         <h2 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue" }}>Content</h2>
-                        <Form.Group controlId="postContent">
+                        <Form.Group controlId="todoContent">
                             <Form.Control
                                 placeholder="Todo Content"
                                 as="textarea"
@@ -42,7 +42,7 @@ export default function AddTodo({ show, handleClose }) {
                             />
                         </Form.Group>
                         <h3 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue" }}>Deadline</h3>
-                        <Form.Group controlId="postDealine">
+                        <Form.Group controlId="todoDealine">
                             <Form.Control
                                 placeholder="Todo Deadline"
                                 as="textarea"
