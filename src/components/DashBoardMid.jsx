@@ -8,7 +8,7 @@ import { jwtDecode } from "jwt-decode";
 export default function DashBoardMid() {
 
     const dispatch = useDispatch();
-    const todo = useSelector((state) => state.todo.todo);
+    const posts = useSelector((state) => state.posts.posts);
     //const loading = useSelector((state) => state.posts.loading)
 
     useEffect(() => {
@@ -21,18 +21,18 @@ export default function DashBoardMid() {
     }, [dispatch]);
 
     useEffect(() => {
-        console.log(todo)
+        console.log(posts)
 
     })
 
     return (
         <Col>
-            <p style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "black" }}>Your Todos</p>
-            {todo.map((todo) => (
+            <p className=" bi bi-clipboard-check-fill" style={{ fontSize: 70, fontFamily: 'Lilita One, cursive', color: "dodgerblue", marginLeft: "-15px" }}>Your Todos</p>
+            {posts.map((post) => (
                 <TodoCard
-                    key={todo.id}
-                    content={todo.content}
-                    todoId={todo.id}
+                    key={post.id}
+                    content={post.content}
+                    todoId={post.id}
                 />
             ))}
         </Col>

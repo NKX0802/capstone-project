@@ -7,7 +7,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
     const [todoContent, setTodoContent] = useState(content || "");
     const [todoTitle, setTodoTitle] = useState(title || "");
     const [todoDeadline, setTodoDeadline] = useState(deadline || "");
-    const BASE_URL = "https://12a8b481-2ba4-4259-ab39-99c9343fe889-00-2xxp2tgehd2zp.picard.replit.dev/";
+    const BASE_URL = "https://12a8b481-2ba4-4259-ab39-99c9343fe889-00-2xxp2tgehd2zp.picard.replit.dev";
 
     const handleUpdate = async () => {
         console.log(todoId)
