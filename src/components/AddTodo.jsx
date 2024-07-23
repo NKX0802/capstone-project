@@ -54,6 +54,7 @@ export default function AddTodo({ show, handleClose }) {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button
+                        style={{ fontSize: 30, fontFamily: 'Lilita One, cursive', color: "white" }}
                         variant="primary"
                         className="rounded-pill"
                         onClick={handleSave}

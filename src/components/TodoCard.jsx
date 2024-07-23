@@ -31,8 +31,14 @@ export default function TodoCard({ title, content, deadline }) {
                         <i className="bi bi-trash-fill"></i>
                     </Button>
                 </div>
-                <input type="checkbox" id="todo-checkbox" className="ms-10" />
-                <label style={{ fontSize: 20 }} htmlFor="todo-checkbox" className="me-20"><strong>Mark as completed</strong></label>
+                {/* <Card.Check
+                    type="checkbox"
+                    id="completed"
+                    label="Mark as completed"
+                    checked={completed}
+                    onChange={(e) => setCompleted(e.target.checked)}
+                    className="mb-3"
+                /> */}
             </Card.Body>
         </Card>
     );

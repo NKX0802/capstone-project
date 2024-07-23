@@ -63,6 +63,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
                 </Modal.Body>
                 <Modal.Footer>
                     <Button
+                        style={{ fontSize: 30, fontFamily: 'Lilita One, cursive', color: "white" }}
                         variant="warning"
                         className="rounded-pill"
                         onClick={handleUpdate}

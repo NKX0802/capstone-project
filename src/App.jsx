@@ -4,6 +4,7 @@ import DashBoard from './pages/DashBoard';
 //import { Provider } from 'react-redux';
 //import store from './store';
 import { AuthProvider } from './components/AuthProvider';
+import WeatherPage from './pages/WeatherPage';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/dashboard" element={<DashBoard />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path='/weather' element={<WeatherPage />} />
           <Route path="*" element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
