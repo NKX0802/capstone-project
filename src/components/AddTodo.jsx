@@ -8,10 +8,11 @@ export default function AddTodo({ show, handleClose }) {
     const [todoContent, setTodoContent] = useState("");
     const [todoTitle, setTodoTitle] = useState("");
     const [todoDeadline, setTodoDeadline] = useState("");
+    const [completed, setCompleted] = useState(false);
     const dispatch = useDispatch();
 
     const handleSave = () => {
-        dispatch(saveTodo(todoContent, todoTitle, todoDeadline));
+        dispatch(saveTodo({ todoTitle, todoContent, todoDeadline }));
         handleClose();
         setTodoContent("");
         setTodoTitle("");
@@ -53,6 +54,14 @@ export default function AddTodo({ show, handleClose }) {
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
+                    <Form.Check
+                        type="checkbox"
+                        id="completed"
+                        label="Mark as completed"
+                        checked={completed}
+                        onChange={(e) => setCompleted(e.target.checked)}
+                        className="mb-3"
+                    />
                     <Button
                         style={{ fontSize: 30, fontFamily: 'Lilita One, cursive', color: "white" }}
                         variant="primary"

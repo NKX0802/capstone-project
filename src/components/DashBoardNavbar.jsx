@@ -2,18 +2,12 @@ import { Button } from "react-bootstrap";
 import AddTodo from "./AddTodo";
 import { Navbar } from "react-bootstrap";
 import { useState } from "react";
-import UpdateTodo from "./UpdateTodo";
 
 export default function DashBoardNavbar({ handleLogout }) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
-
-    const [showUpdate, setShowUpdate] = useState(false);
-
-    const handleShowUpdate = () => setShowUpdate(true)
-    const handleCloseUpdate = () => setShowUpdate(false);
 
     return (
         <>
@@ -26,14 +20,10 @@ export default function DashBoardNavbar({ handleLogout }) {
                         Add Todo
                     </Button>
                     <AddTodo show={show} handleClose={handleClose} />
-                    <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} onClick={handleShowUpdate}>
-                        Update
-                    </Button>
-                    <UpdateTodo show={show} handleClose={handleCloseUpdate} />
-                    <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }}>
+                    <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} href="/profile">
                         Profile
                     </Button>
-                    <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }}>
+                    <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} href="/weather">
                         Weather
                     </Button>
                     <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} onClick={handleLogout} >

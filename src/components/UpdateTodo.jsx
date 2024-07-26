@@ -32,7 +32,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
                 <Modal.Header closeButton></Modal.Header>
                 <Modal.Body>
                     <Form>
-                        <h1 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "#FFDB58" }}>Update your title</h1>
+                        <h1 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "#FFBF00" }}>Update title</h1>
                         <Form.Group controlId="postTitle">
                             <Form.Control
                                 placeholder="Update Todo Title"
@@ -41,7 +41,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
                                 onChange={(e) => setTodoTitle(e.target.value)}
                             />
                         </Form.Group>
-                        <h2 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "#FFDB58" }}>Update your content</h2>
+                        <h2 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "#FFBF00" }}>Update content</h2>
                         <Form.Group controlId="postContent">
                             <Form.Control
                                 placeholder="Update Todo Content"
@@ -50,7 +50,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
                                 onChange={(e) => setTodoContent(e.target.value)}
                             />
                         </Form.Group>
-                        <h3 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "#FFDB58" }}>Update your deadline</h3>
+                        <h3 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "#FFBF00" }}>Update deadline</h3>
                         <Form.Group controlId="postDeadline">
                             <Form.Control
                                 placeholder="Update Todo Deadline"

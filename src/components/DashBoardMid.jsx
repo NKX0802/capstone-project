@@ -27,14 +27,17 @@ export default function DashBoardMid() {
 
     return (
         <Col>
-            <p className=" bi bi-clipboard-check-fill" style={{ fontSize: 70, fontFamily: 'Lilita One, cursive', color: "dodgerblue", marginLeft: "-15px" }}>Your Todos</p>
-            {posts.map((post) => (
+            <p style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue", marginLeft: "-15px" }}></p>
+            {posts.map((todo) => (
                 <TodoCard
-                    key={post.id}
-                    content={post.content}
-                    todoId={post.id}
+                    key={todo.id}
+                    title={todo.title}
+                    content={todo.content}
+                    deadline={todo.deadline}
+                    todoId={todo.id}
                 />
             ))}
+
         </Col>
     )
 }

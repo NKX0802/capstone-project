@@ -27,7 +27,7 @@ export default function DashBoard() {
                 <Row>
                     <DashBoardNavbar handleLogout={handleLogout} />
                     <DashBoardMid />
-                    <Col md={12}>
+                    <Col md={11}>
                         <TodoCard />
                     </Col>
                 </Row>

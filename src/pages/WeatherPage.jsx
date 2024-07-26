@@ -4,7 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 import DashBoardNavbar from "../components/DashBoardNavbar";
-import WeatherMid from "../components/WeatherMid";
+import WeatherPageMid from "../components/WeatherPageMid";
 
 
 export default function WeatherPage() {
@@ -26,7 +26,7 @@ export default function WeatherPage() {
             <Container>
                 <Row>
                     <DashBoardNavbar handleLogout={handleLogout} />
-                    <WeatherMid />
+                    <WeatherPageMid />
                 </Row>
             </Container>
         </>
