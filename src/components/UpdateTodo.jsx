@@ -220,11 +220,11 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
     return (
         <Modal show={showUpdate} onHide={handleClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Update Todo</Modal.Title>
+                <Modal.Title style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue", textDecoration: "underline" }}>Update Todo</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <Form>
-                    <h1 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "#FFBF00" }}>Update title</h1>
+                    <h1 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue" }}>Title</h1>
                     <Form.Group controlId="todoTitle">
                         <Form.Control
                             placeholder="Update Todo Title"
@@ -234,7 +234,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
                             onChange={(e) => setTodoTitle(e.target.value)}
                         />
                     </Form.Group>
-                    <h2 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "#FFBF00" }}>Update content</h2>
+                    <h2 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue" }}>Content</h2>
                     <Form.Group controlId="todoContent">
                         <Form.Control
                             placeholder="Update Todo Content"
@@ -244,7 +244,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
                             onChange={(e) => setTodoContent(e.target.value)}
                         />
                     </Form.Group>
-                    <h3 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "#FFBF00" }}>Update deadline</h3>
+                    <h3 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue" }}>Deadline</h3>
                     <Form.Group controlId="todoDeadline">
                         <Form.Control
                             placeholder="Update Todo Deadline"

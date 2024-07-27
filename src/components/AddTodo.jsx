@@ -20,7 +20,10 @@ export default function AddTodo({ show, handleClose }) {
     return (
         <>
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton></Modal.Header>
+                {/* <Modal.Header closeButton></Modal.Header> */}
+                <Modal.Header closeButton>
+                    <Modal.Title style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue", textDecoration: "underline" }}>Add Todo</Modal.Title>
+                </Modal.Header>
                 <Modal.Body>
                     <Form>
                         <h1 style={{ fontSize: 50, fontFamily: 'Lilita One, cursive', color: "dodgerblue" }}>Title</h1>
