@@ -4,7 +4,7 @@ import { Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 import DashBoardNavbar from "../components/DashBoardNavbar";
-import { ProfileMid } from "../components/ProfileMid";
+import ProfileMid from "../components/ProfileMid";
 
 export default function ProfilePage() {
     const auth = getAuth();
