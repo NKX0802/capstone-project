@@ -1,6 +1,6 @@
 import { getAuth } from "firebase/auth";
 import { useContext } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../components/AuthProvider";
 import DashBoardNavbar from "../components/DashBoardNavbar";
@@ -27,9 +27,8 @@ export default function DashBoard() {
                 <Row>
                     <DashBoardNavbar handleLogout={handleLogout} />
                     <DashBoardMid />
-                    <Col md={11}>
-                        <TodoCard />
-                    </Col>
+                    <TodoCard />
+
                 </Row>
             </Container>
         </>

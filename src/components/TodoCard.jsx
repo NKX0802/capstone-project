@@ -10,30 +10,43 @@ export default function TodoCard({ title, content, deadline, todoId, }) {
     const BASE_URL = "https://12a8b481-2ba4-4259-ab39-99c9343fe889-00-2xxp2tgehd2zp.picard.replit.dev";
 
     const handleDelete = async () => {
-        const response = await axios.delete(`${BASE_URL}/todo/${todoId}`)
-
-        console.log(response.data)
+        try {
+            const response = await axios.delete(`${BASE_URL}/todo/${todoId}`);
+            console.log('Delete response:', response.data);
+        } catch (error) {
+            console.error('Error deleting todo:', error);
+        }
     };
-    console.log({ title, content, deadline, todoId });
+
+    // Conditionally render card only if title and content are available
+    if (!title || !content) {
+        console.warn('Missing title or content:', { title, content, deadline, todoId });
+        return null; // Don't render empty cards
+    }
+
+    console.log('Rendering card:', { title, content, deadline, todoId });
+
 
     return (
-        <Card className="my-4">
-            <CardHeader style={{ fontSize: 35, fontFamily: 'Lilita One, cursive', backgroundColor: 'dodgerblue', color: "white" }}>{title}</CardHeader>
-            <Card.Body style={{ backgroundColor: 'white', color: "dodgerblue" }}>
-                <Card.Text style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }}>{content}</Card.Text>
-                <Card.Text style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }}>
-                    Deadline: {deadline}
-                </Card.Text>
-                <div className="text-end">
-                    <Button variant="primary" className="me-2" style={{ fontSize: 20, marginRight: '10px' }} onClick={handleShowUpdate}>
-                        <UpdateTodo showUpdate={showUpdate} handleClose={handleCloseUpdate} postId={todoId} content={content} />
-                        <i className="bi bi-pencil-square"></i>
-                    </Button>
-                    <Button variant="primary" className="me-2" style={{ fontSize: 20, marginRight: '10px' }} onClick={handleDelete}>
-                        <i className="bi bi-trash-fill"></i>
-                    </Button>
-                </div>
-            </Card.Body>
-        </Card>
+        <>
+            <Card className="my-3">
+                <CardHeader style={{ fontSize: 33, fontFamily: 'Lilita One, cursive', backgroundColor: 'dodgerblue', color: "white" }}>{title}</CardHeader>
+                <Card.Body style={{ backgroundColor: 'white', color: "dodgerblue" }}>
+                    <Card.Text style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }}>{content}</Card.Text>
+                    <Card.Text style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }}>
+                        Deadline: {deadline}
+                    </Card.Text>
+                    <div className="text-end">
+                        <Button variant="primary" className="me-2" style={{ fontSize: 25, width: "55px" }} onClick={handleShowUpdate}>
+                            <UpdateTodo showUpdate={showUpdate} handleClose={handleCloseUpdate} postId={todoId} content={content} />
+                            <i className="bi bi-pencil-square"></i>
+                        </Button>
+                        <Button variant="primary" className="me-2" style={{ fontSize: 25, width: "55px" }} onClick={handleDelete}>
+                            <i className="bi bi-trash-fill"></i>
+                        </Button>
+                    </div>
+                </Card.Body>
+            </Card>
+        </>
     );
 }

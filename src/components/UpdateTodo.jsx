@@ -26,6 +26,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
             console.error("Error updating post:", error);
         }
     };
+
     return (
         <>
             <Modal show={showUpdate} onHide={handleClose}>
@@ -38,6 +39,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
                                 placeholder="Update Todo Title"
                                 as="textarea"
                                 rows={1}
+                                value={todoTitle}
                                 onChange={(e) => setTodoTitle(e.target.value)}
                             />
                         </Form.Group>
@@ -47,6 +49,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
                                 placeholder="Update Todo Content"
                                 as="textarea"
                                 rows={3}
+                                value={todoContent}
                                 onChange={(e) => setTodoContent(e.target.value)}
                             />
                         </Form.Group>
@@ -56,6 +59,7 @@ export default function UpdateTodo({ showUpdate, handleClose, title, content, de
                                 placeholder="Update Todo Deadline"
                                 as="textarea"
                                 rows={1}
+                                value={todoDeadline}
                                 onChange={(e) => setTodoDeadline(e.target.value)}
                             />
                         </Form.Group>
