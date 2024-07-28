@@ -13,8 +13,8 @@ export default function App() {
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="/dashboard" element={<DashBoard />} />
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/dashboard" element={<DashBoard />} />
             <Route path='/weather' element={<WeatherPage />} />
             <Route path='/profile' element={<ProfilePage />} />
             <Route path="*" element={<LoginPage />} />

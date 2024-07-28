@@ -36,9 +36,12 @@ export default function FireBaseImageUpload() {
     };
 
     return (
-        <div className="App">
-            <input type="file" onChange={(e) => setImageUpload(e.target.files[0])} />
-            <Button onClick={uploadImage}>Upload</Button>
-        </div>
+        <>
+            <p className="text-3xl text-center mt-6 font-bold" style={{ fontSize: 80, fontFamily: 'Lilita One, cursive', color: "dodgerblue", marginTop: '20px', textDecoration: 'underline' }}>My Profile</p>
+            <div className="App">
+                <input type="file" onChange={(e) => setImageUpload(e.target.files[0])} />
+                <Button onClick={uploadImage}>Upload</Button>
+            </div>
+        </>
     );
 }

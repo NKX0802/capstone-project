@@ -28,7 +28,6 @@ export default function DashBoard() {
                     <DashBoardNavbar handleLogout={handleLogout} />
                     <DashBoardMid />
                     <TodoCard />
-
                 </Row>
             </Container>
         </>
