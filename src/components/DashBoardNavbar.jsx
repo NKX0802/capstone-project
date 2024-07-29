@@ -1,6 +1,5 @@
-import { Button } from "react-bootstrap";
+import { Button, Navbar, Nav, Container } from "react-bootstrap";
 import AddTodo from "./AddTodo";
-import { Navbar } from "react-bootstrap";
 import { useState } from "react";
 
 export default function DashBoardNavbar({ handleLogout }) {
@@ -11,33 +10,70 @@ export default function DashBoardNavbar({ handleLogout }) {
 
     return (
         <>
-            <Navbar bg="primary" variant="dark">
-                <div className="d-flex flex-row justify-content-start align-items-start vh-1000">
-                    <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} href="/dashboard">
+            <Navbar bg="primary" variant="dark" expand="lg">
+                <Container>
+                    <Navbar.Brand href="/dashboard" style={{ fontSize: 30, fontFamily: 'Lilita One, cursive', marginLeft: '20px' }}>
                         DashBoard
-                    </Button>
-                    <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} onClick={handleShow}>
-                        Add Todo
-                    </Button>
-                    <AddTodo show={show} handleClose={handleClose} />
-                    <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} href="/weather">
-                        Weather
-                    </Button>
-                    <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} href="/profile">
-                        Profile
-                    </Button>
-                    <Button style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} onClick={handleLogout} >
-                        Logout
-                    </Button>
-                </div>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ color: "white" }} />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="ms-auto">
+                            <Button className="me-2 mb-2 mb-lg-0" style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} onClick={handleShow}>
+                                Add Todo
+                            </Button>
+                            <AddTodo show={show} handleClose={handleClose} />
+                            <Button className="me-2 mb-2 mb-lg-0" style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} href="/weather">
+                                Weather
+                            </Button>
+                            <Button className="me-2 mb-2 mb-lg-0" style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} href="/profile">
+                                Profile
+                            </Button>
+                            <Button className="mb-2 mb-lg-0" style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} onClick={handleLogout}>
+                                Logout
+                            </Button>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
             </Navbar>
         </>
-
-    )
-
+    );
 }
-// className="bi bi-journal-text"
-// className="bi bi-clipboard-plus"
-// className="bi bi-person"
-// className="bi bi-cloud"
-// className="bi bi-door-closed"
+
+// import { Button, Navbar, Nav } from "react-bootstrap";
+// import AddTodo from "./AddTodo";
+// import { useState } from "react";
+
+// export default function DashBoardNavbar({ handleLogout }) {
+//     const [show, setShow] = useState(false);
+
+//     const handleClose = () => setShow(false);
+//     const handleShow = () => setShow(true);
+
+//     return (
+//         <>
+//             <Navbar bg="primary" variant="dark" expand="lg">
+//                 <Navbar.Brand href="/dashboard" style={{ fontSize: 30, fontFamily: 'Lilita One, cursive', marginLeft: '20px' }}>
+//                     DashBoard
+//                 </Navbar.Brand>
+//                 <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ color: "white" }} />
+//                 <Navbar.Collapse id="basic-navbar-nav">
+//                     <Nav className="ms-auto">
+//                         <Button className="me-2 mb-2 mb-lg-0" style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} onClick={handleShow}>
+//                             Add Todo
+//                         </Button>
+//                         <AddTodo show={show} handleClose={handleClose} />
+//                         <Button className="me-2 mb-2 mb-lg-0" style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} href="/weather">
+//                             Weather
+//                         </Button>
+//                         <Button className="me-2 mb-2 mb-lg-0" style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} href="/profile">
+//                             Profile
+//                         </Button>
+//                         <Button className="mb-2 mb-lg-0" style={{ fontSize: 30, fontFamily: 'Lilita One, cursive' }} onClick={handleLogout}>
+//                             Logout
+//                         </Button>
+//                     </Nav>
+//                 </Navbar.Collapse>
+//             </Navbar>
+//         </>
+//     );
+// }
