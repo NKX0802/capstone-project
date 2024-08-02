@@ -31,7 +31,5 @@ export default function ProfilePage() {
         </>
     );
 }
-// Upload image profile
-// Show image profile
-// Show username
+
 
